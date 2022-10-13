@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dimas_kampus,dimas.kampus,model_dimas_kampus,,1,1,1,1
+access_dimas_jurusan,dimas.jurusan,model_dimas_jurusan,,1,1,1,1
+access_dimas_follow_kampus,dimas.follow.kampus,model_dimas_follow_kampus,,1,1,1,1

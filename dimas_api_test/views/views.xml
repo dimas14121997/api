@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dimas_kampus_view_tree" model="ir.ui.view">
+        <field name="name">dimas.kampus.view.tree</field>
+        <field name="model">dimas.kampus</field>
+        <field name="arch" type="xml">
+            <tree string="Dimas kampus">
+                <field name="name"/>
+                <field name="jenis_kampus"/>
+                <field name="akreditasi"/>
+                <field name="status"/>
+                <field name="no_telp"/>
+                <field name="fax"/>
+                <field name="alamat"/>
+            </tree>
+            
+        </field>
+    </record>
+    <record id="dimas_kampus_view_form" model="ir.ui.view">
+        <field name="name">dimas.kampus.view.form</field>
+        <field name="model">dimas.kampus</field>
+        <field name="arch" type="xml">
+            <form>
+              
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="jenis_kampus"/>
+                        <field name="akreditasi"/>
+                        <field name="status"/>
+                        <field name="no_telp"/>
+                        <field name="fax"/>
+                        <field name="alamat"/> 
+                    </group>
+                   <group>
+                        <!-- <field name="book_name_ids">
+                            <tree sequence="1" editable="bottom">
+                                <field name="book_id"/>
+                            
+                            </tree>
+                        </field> -->
+                             
+                   </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="dimas_kampus_action" model="ir.actions.act_window">
+        <field name="name">Dimas kampus</field>
+        <field name="res_model">dimas.kampus</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="dimas_kampus_menu"
+        action="dimas_kampus_action"
+        name="Dimas kampus"/>
+
+    <menuitem id="kampus_menu"
+        parent="dimas_kampus_menu"
+        sequence="1"
+        action="dimas_kampus_action"
+        name="kampus"/>
+
+  <!-- jurusan -->
+
+    <record id="dimas_jurusan_action" model="ir.actions.act_window">
+        <field name="name">Dimas jurusan</field>
+        <field name="res_model">dimas.jurusan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+  
+    <menuitem id="jurusan_menu"
+        parent="dimas_kampus_menu"
+        sequence="2"
+        action="dimas_jurusan_action"
+        name="jurusan"/>
+    
+    <record id="dimas_jurusan_view_tree" model="ir.ui.view">
+        <field name="name">dimas.jurusan.view.tree</field>
+        <field name="model">dimas.jurusan</field>
+        <field name="arch" type="xml">
+            <tree string="Dimas jurusan">
+                <field name="name"/>
+                <field name="akreditasi"/>
+                <field name="name_kampus_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dimas_jurusan_view_form" model="ir.ui.view">
+        <field name="name">dimas.jurusan.view.form</field>
+        <field name="model">dimas.jurusan</field>
+        <field name="arch" type="xml">
+            <form>
+              
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="akreditasi"/>
+                        <field name="name_kampus_ids"/>
+                    </group>
+                   <group>
+                        <!-- <field name="book_name_ids">
+                            <tree sequence="1" editable="bottom">
+                                <field name="book_id"/>
+                            
+                            </tree>
+                        </field> -->
+                             
+                   </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+   <!-- follow -->
+
+    <record id="dimas_follow_kampus_action" model="ir.actions.act_window">
+        <field name="name">Dimas follow.kampus</field>
+        <field name="res_model">dimas.follow.kampus</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+  
+    <menuitem id="follow_kampus_menu"
+        parent="dimas_kampus_menu"
+        sequence="3"
+        action="dimas_follow_kampus_action"
+        name="follow kampus"/>
+    
+    <record id="dimas_follow_kampus_view_tree" model="ir.ui.view">
+        <field name="name">dimas.follow.kampus.view.tree</field>
+        <field name="model">dimas.follow.kampus</field>
+        <field name="arch" type="xml">
+            <tree string="Dimas follow kampus">
+                <field name="name"/>
+                <field name="name_kampus_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dimas_follow_kampus_view_form" model="ir.ui.view">
+        <field name="name">dimas.follow.kampus.view.form</field>
+        <field name="model">dimas.follow.kampus</field>
+        <field name="arch" type="xml">
+            <form>
+              
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="name_kampus_ids"/>
+                    </group>
+                   <group>
+                        <!-- <field name="book_name_ids">
+                            <tree sequence="1" editable="bottom">
+                                <field name="book_id"/>
+                            
+                            </tree>
+                        </field> -->
+                             
+                   </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
